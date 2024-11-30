@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-doc:
+  deploy-docs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
