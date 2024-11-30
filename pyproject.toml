@@ -1,7 +1,7 @@
 [project]
 name = "atsphinx-toybox"
 version = "0.0.0"
-description = "Miscellaneous sphinx-extension collection of attakei' trials"
+description = "Miscellaneous sphinx-extension collection of attakei' trials."
 authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]
 license = "Apache-2.0"
 requires-python = ">= 3.9"
