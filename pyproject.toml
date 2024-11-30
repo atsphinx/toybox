@@ -1,0 +1,76 @@
+[project]
+name = "atsphinx-toybox"
+version = "0.0.0"
+description = "Miscellaneous sphinx-extension collection of attakei' trials"
+authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]
+license = "Apache-2.0"
+requires-python = ">= 3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Sphinx",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Text Processing :: Markup :: reStructuredText",
+]
+readme = "README.rst"
+dependencies = [
+    "sphinx",
+]
+
+[project.urls]
+Home = "https://github.com/atsphinx/toybox"
+Documentation = "https://atsphinx.github.io/toybox"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+managed = true
+dev-dependencies = [
+    "atsphinx-mini18n",
+    "doc8",
+    "esbonio",
+    "furo",
+    "mypy",
+    "pytest",
+    "sphinx-autobuild",
+    "sphinx-intl",
+]
+
+[tool.ruff.lint]
+select = ["C90", "D", "E", "F", "I", "W"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atsphinx"]
+only-includes = ["src/atsphinx"]
+
+[tool.mypy]
+exclude = 'conf\.py$'
+
+[[tool.mypy.overrides]]
+module = ['docutils', 'docutils.*']
+ignore_missing_imports = true
