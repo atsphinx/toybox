@@ -45,7 +45,7 @@ class Release:
     @property
     def archive_url(self) -> str:
         """Retrieve URL for archive of GitHub Releases."""
-        return f"https://github.com/sass/dart-sass/releases/download/{self.version}/dart-sass-{self.version}-{self.os}-{self.arch}.{self.file_ext}"
+        return f"https://github.com/sass/dart-sass/releases/download/{self.version}/dart-sass-{self.version}-{self.os}-{self.arch}.{self.archive_ext}"
 
     @property
     def archive_format(self) -> str:
@@ -53,7 +53,7 @@ class Release:
         return "zip" if self.os == "windows" else "gztar"
 
     @property
-    def file_ext(self) -> str:
+    def archive_ext(self) -> str:
         """File format as extension."""
         return "zip" if self.os == "windows" else "tar.gz"
 
