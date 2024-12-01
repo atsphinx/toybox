@@ -5,7 +5,7 @@ atsphinx-toybox
 Overview
 ========
 
-.. todo:: Write it
+This is attakei's alpha-level Sphinx-extensions.
 
 .. toctree::
    :maxdepth: 1

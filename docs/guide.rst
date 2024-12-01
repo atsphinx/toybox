@@ -5,14 +5,16 @@ User guide
 Installation
 ============
 
-.. todo:: Write it
+.. warning:: This is not yet published on PyPI.
+
+You can install from PyPI.
+
+.. code-block:: console
+
+   pip install atsphinx-toybox
 
 Usage
 =====
 
-.. todo:: Write it
-
-Configuration
-=============
-
-.. todo:: Write it
+This is collection of extensions.
+Please find your favorite extension from :doc:`./extensions/index`
