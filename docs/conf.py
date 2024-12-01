@@ -74,7 +74,7 @@ mini18n_support_languages = ["en", "ja"]
 mini18n_basepath = "/toybox/"
 # atsphinx.toybox.sass
 sass_load_paths = [root / "node_modules"]
-sass_extra_options = ["-q"]
+sass_extra_options = ["--update", "-q"]
 
 
 def setup(app):
