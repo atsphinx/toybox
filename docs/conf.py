@@ -1,5 +1,9 @@
+from pathlib import Path
+
 from atsphinx.mini18n import get_template_dir as get_mini18n_template_dir
 from atsphinx.toybox import __version__ as version
+
+root = Path(__file__).parent
 
 # -- Project information
 project = "atsphinx-toybox"
@@ -16,10 +20,11 @@ extensions = [
     # Third-party extensions
     "atsphinx.mini18n",
     # My extensions
+    "atsphinx.toybox.sass",
     "atsphinx.toybox.stlite",
 ]
 templates_path = ["_templates", get_mini18n_template_dir()]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "node_modules"]
 
 # -- Options for i18n
 gettext_compact = False
@@ -33,6 +38,7 @@ html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
+    "css/demo.css",
 ]
 html_theme_options = {
     "footer_icons": [
@@ -67,6 +73,9 @@ todo_include_todos = True
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
 mini18n_basepath = "/toybox/"
+# atsphinx.toybox.sass
+sass_load_paths = [root / "node_modules"]
+sass_extra_options = ["--update", "-q"]
 
 
 def setup(app):

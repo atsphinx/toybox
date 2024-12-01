@@ -38,6 +38,11 @@ dependencies = [
 Home = "https://github.com/atsphinx/toybox"
 Documentation = "https://atsphinx.github.io/toybox"
 
+[project.optional-dependencies]
+sass = [
+    "httpx>=0.28.0",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
