@@ -58,9 +58,9 @@ class Release:
         return "zip" if self.os == "windows" else "tar.gz"
 
     @property
-    def bin_ext(self) -> str:
+    def exec_ext(self) -> str:
         """Extension of executable file."""
-        return ".exe" if self.os == "windows" else ""
+        return ".bat" if self.os == "windows" else ""
 
 
 def resolve_os() -> OS_NAME:
@@ -89,7 +89,7 @@ def resolve_arch() -> ARCH_NAME:
 def setup_dart_sass(version: str, dist: Path) -> Path:
     """If executable is not exists, download archive."""
     release = Release.from_platform(version)
-    fullpath = dist / "dart-sass" / f"sass{release.bin_ext}"
+    fullpath = dist / "dart-sass" / f"sass{release.exec_ext}"
     if not fullpath.exists():
         logger.debug(f"Binary archive is {release.archive_url}")
         resp = httpx.get(release.archive_url, follow_redirects=True)
