@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atsphinx-toybox 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 13:31+0900\n"
+"POT-Creation-Date: 2024-12-01 13:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -24,55 +24,59 @@ msgstr ""
 msgid "atsphinx.toybox.stlite"
 msgstr ""
 
-#: ../../extensions/stlite/index.rst:6
+#: ../../extensions/stlite/index.rst:5
+msgid "Added by v2024.12.1"
+msgstr ""
+
+#: ../../extensions/stlite/index.rst:8
 msgid "Overview"
 msgstr "概要"
 
-#: ../../extensions/stlite/index.rst:8
+#: ../../extensions/stlite/index.rst:10
 msgid "This it to embed Stlite content into your documents."
 msgstr "この拡張は、Stlite製のコンテンツをドキュメントに埋め込めるようにするものです。"
 
-#: ../../extensions/stlite/index.rst:11
+#: ../../extensions/stlite/index.rst:13
 msgid "Usage"
 msgstr "使用法"
 
-#: ../../extensions/stlite/index.rst:14
+#: ../../extensions/stlite/index.rst:16
 msgid "Enable extension"
 msgstr "拡張の有効化"
 
-#: ../../extensions/stlite/index.rst:16
+#: ../../extensions/stlite/index.rst:18
 msgid "Add this into your ``conf.py`` of Sphinx."
 msgstr "あなたのSphinxドキュメントにある ``conf.py`` に追加して下さい。"
 
-#: ../../extensions/stlite/index.rst:18
+#: ../../extensions/stlite/index.rst:20
 msgid "conf.py"
 msgstr ""
 
-#: ../../extensions/stlite/index.rst:26
+#: ../../extensions/stlite/index.rst:28
 msgid "Configuration"
 msgstr "設定"
 
-#: ../../extensions/stlite/index.rst:28
+#: ../../extensions/stlite/index.rst:30
 msgid "There are not configuration options."
 msgstr "追加の設定項目はありません。"
 
-#: ../../extensions/stlite/index.rst:31
+#: ../../extensions/stlite/index.rst:33
 msgid "Demo"
 msgstr "デモ"
 
-#: ../../extensions/stlite/index.rst:33
+#: ../../extensions/stlite/index.rst:35
 msgid "If you want to see source, please jump to repo by button on top of page."
 msgstr "ソースを見たい場合は、ページ上部にあるボタンからアクセスしてください。"
 
-#: ../../extensions/stlite/index.rst:52
+#: ../../extensions/stlite/index.rst:54
 msgid "Refs"
 msgstr ""
 
-#: ../../extensions/stlite/index.rst:54
+#: ../../extensions/stlite/index.rst:56
 msgid "`Stlite website <https://stlite.net/>`_"
 msgstr ""
 
-#: ../../extensions/stlite/index.rst:55
+#: ../../extensions/stlite/index.rst:57
 msgid "`Stlite repository <https://github.com/whitphx/stlite>`_"
 msgstr ""
 

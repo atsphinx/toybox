@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atsphinx-toybox 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 13:31+0900\n"
+"POT-Creation-Date: 2024-12-01 13:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -28,25 +28,15 @@ msgstr "利用ガイド"
 msgid "Installation"
 msgstr "インストール"
 
-#: ../../guide.rst:8
-msgid "This is not yet published on PyPI."
-msgstr ""
-
-#: ../../guide.rst:10
-msgid "You can install from PyPI."
-msgstr "PyPIからインストールできます。"
-
-#: ../../guide.rst:17
+#: ../../guide.rst:13
 msgid "Usage"
 msgstr "使い方"
 
-#: ../../guide.rst:19
+#: ../../guide.rst:15
 msgid ""
 "This is collection of extensions. Please find your favorite extension "
 "from :doc:`./extensions/index`"
-msgstr ""
-"これ自体は、Sphinx拡張のコレクションです。"
-":doc:`./extensions/index` から試したい拡張を探してください。"
+msgstr "これ自体は、Sphinx拡張のコレクションです。:doc:`./extensions/index` から試したい拡張を探してください。"
 
 #~ msgid "Todo"
 #~ msgstr ""
@@ -56,4 +46,10 @@ msgstr ""
 
 #~ msgid "Configuration"
 #~ msgstr ""
+
+#~ msgid "This is not yet published on PyPI."
+#~ msgstr ""
+
+#~ msgid "You can install from PyPI."
+#~ msgstr "PyPIからインストールできます。"
 

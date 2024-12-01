@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-12-01 07:08+0900\n"
+"POT-Creation-Date: 2024-12-01 13:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,30 @@ msgid "Change logs"
 msgstr ""
 
 #: ../../../CHANGES.rst:6
+msgid "v2024.12.1"
+msgstr ""
+
+#: ../../../CHANGES.rst
+msgid "Date"
+msgstr ""
+
+#: ../../../CHANGES.rst:8 ../../../CHANGES.rst:20
+msgid "2024-12-01 (JST)"
+msgstr ""
+
+#: ../../../CHANGES.rst:11
+msgid "Features"
+msgstr ""
+
+#: ../../../CHANGES.rst:13
+msgid "``atsphinx.toybox.stlite``"
+msgstr ""
+
+#: ../../../CHANGES.rst:15
+msgid "Add new extension!"
+msgstr ""
+
+#: ../../../CHANGES.rst:18
 msgid "v0.0.0"
 msgstr ""
 
@@ -29,11 +53,7 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#: ../../../CHANGES.rst:8
-msgid "2024-12-01 (JST)"
-msgstr ""
-
-#: ../../../CHANGES.rst:10
+#: ../../../CHANGES.rst:22
 msgid "Initial commit."
 msgstr ""
 
