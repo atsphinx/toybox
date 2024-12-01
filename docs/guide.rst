@@ -5,10 +5,6 @@ User guide
 Installation
 ============
 
-.. warning:: This is not yet published on PyPI.
-
-You can install from PyPI.
-
 .. code-block:: console
 
    pip install atsphinx-toybox
