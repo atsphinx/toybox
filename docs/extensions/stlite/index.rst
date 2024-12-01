@@ -2,6 +2,8 @@
 atsphinx.toybox.stlite
 ======================
 
+.. note:: Added by v2024.12.1
+
 Overview
 ========
 
