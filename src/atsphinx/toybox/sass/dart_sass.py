@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Literal
 
 import httpx
+from sphinx.util import logging
 
 OS_NAME = Literal["android", "linux", "macos", "windows"]
 ARCH_NAME = Literal[
@@ -22,6 +23,8 @@ ARCH_NAME = Literal[
     "x64",
     "x64-musl",
 ]
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -74,7 +77,7 @@ def resolve_arch() -> ARCH_NAME:
     """Retrieve cpu architecture string as dart-sass specified."""
     # NOTE: This logic is not all covered.
     arch_name = platform.machine()
-    if arch_name == "x86_64":
+    if arch_name in ("x86_64", "AMD64"):
         arch_name = "x64"
     if arch_name.startswith("arm") and arch_name != "arm64":
         arch_name = "arm"
@@ -88,6 +91,7 @@ def setup_dart_sass(version: str, dist: Path) -> Path:
     release = Release.from_platform(version)
     fullpath = dist / "dart-sass" / f"sass{release.bin_ext}"
     if not fullpath.exists():
+        logger.debug(f"Binary archive is {release.archive_url}")
         resp = httpx.get(release.archive_url, follow_redirects=True)
         archive_path = Path(tempfile.mktemp())
         archive_path.write_bytes(resp.content)
