@@ -2,6 +2,8 @@
 atsphinx.toybox.sass
 ====================
 
+.. note:: Added by v2024.12.2
+
 Overview
 ========
 
