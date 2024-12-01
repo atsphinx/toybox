@@ -38,11 +38,29 @@ def compile_assets(app: Sphinx):
     source_dir = app.srcdir / "_sass"
     output_dir = app.srcdir / "_static" / "css"
     output_dir.mkdir(parents=True, exist_ok=True)
-    cmd = [str(sass_bin), f"{source_dir}:{output_dir}"]
+    options = []
+    if app.config.sass_load_paths:
+        options += [f"--load-path={p}" for p in app.config.sass_load_paths]
+    options += app.config.sass_extra_options
+    cmd = [str(sass_bin), *options, f"{source_dir}:{output_dir}"]
     subprocess.run(cmd)
 
 
 def setup(app: Sphinx):  # noqa: D103
+    app.add_config_value(
+        "sass_load_paths",
+        [],
+        "env",
+        list[str],
+        "Path list of external import resources",
+    )
+    app.add_config_value(
+        "sass_extra_options",
+        [],
+        "env",
+        list[str],
+        "Option arguments of dart-sass",
+    )
     app.connect("config-inited", configure_sass_bin)
     app.connect("builder-inited", compile_assets)
     return {}

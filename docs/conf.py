@@ -1,5 +1,9 @@
+from pathlib import Path
+
 from atsphinx.mini18n import get_template_dir as get_mini18n_template_dir
 from atsphinx.toybox import __version__ as version
+
+root = Path(__file__).parent
 
 # -- Project information
 project = "atsphinx-toybox"
@@ -20,7 +24,7 @@ extensions = [
     "atsphinx.toybox.stlite",
 ]
 templates_path = ["_templates", get_mini18n_template_dir()]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "node_modules"]
 
 # -- Options for i18n
 gettext_compact = False
@@ -68,6 +72,9 @@ todo_include_todos = True
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
 mini18n_basepath = "/toybox/"
+# atsphinx.toybox.sass
+sass_load_paths = [root / "node_modules"]
+sass_extra_options = ["-q"]
 
 
 def setup(app):

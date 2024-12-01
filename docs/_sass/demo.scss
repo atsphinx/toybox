@@ -1,0 +1,7 @@
+@use "bulma/sass/utilities/extends";
+
+.my-control {
+  @extend %control;
+  background-color: purple;
+  color: white;
+}
