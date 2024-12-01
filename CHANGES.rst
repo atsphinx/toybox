@@ -2,6 +2,26 @@
 Change logs
 ===========
 
+v2024.12.2
+==========
+
+:Date: 2024-12-02 (JST)
+
+Features
+--------
+
+* ``atsphinx.toybox.sass``
+
+  * Add new extension!
+
+Others
+------
+
+* Update tests
+
+  * Fix python versioning matrix for ``source-test``
+  * Add runner matrix for ``docs-test``
+
 v2024.12.1
 ==========
 
