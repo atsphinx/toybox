@@ -33,7 +33,22 @@ There are not configuration options.
 Demo
 ====
 
-.. todo:: Add example.
+This content is used generated CSS from SASS.
+
+.. code:: rst
+
+   .. container:: sass-demo-bulma-content
+
+      This paragraph is colored by "purplel".
+
+.. literalinclude:: ../../_sass/demo.scss
+   :caption: docs/_sass/demo.scss
+
+Result:
+
+.. container:: sass-demo-bulma-content
+
+   This paragraph is colored by "purplel".
 
 Refs
 ====
