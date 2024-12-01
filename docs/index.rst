@@ -11,4 +11,5 @@ Overview
    :maxdepth: 1
 
    guide
+   extensions/index
    changes
