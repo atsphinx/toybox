@@ -16,8 +16,8 @@ STLITE_VERSION = "0.73.0"
 package_root = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
-page_template = Template((package_root / "page.html.jinja").read_text())
-view_template = Template((package_root / "view.html.jinja").read_text())
+page_template = Template((package_root / "page.html.jinja").read_text(encoding="utf8"))
+view_template = Template((package_root / "view.html.jinja").read_text(encoding="utf8"))
 
 
 class stlite(nodes.Element, nodes.General):  # noqa: D101
@@ -35,7 +35,7 @@ def visit_stlite(self, node: stlite):
         return
     widget_url = app.builder.get_relative_uri(docname, widget_uri)
     out.parent.mkdir(exist_ok=True, parents=True)
-    out.write_text(page_template.render(node.attributes))
+    out.write_text(page_template.render(node.attributes), encoding="utf8")
     self.body.append(view_template.render(node.attributes, url=widget_url))
 
 
