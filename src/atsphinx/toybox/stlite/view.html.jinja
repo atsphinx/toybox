@@ -1,0 +1,19 @@
+<div id="{{ id }}__div" style="position: relative;">
+  <iframe id="{{ id }}__iframe" src="{{ url }}" frameborder="0"></iframe>
+</div>
+<script>
+  const iframe = document.getElementById('{{ id }}__iframe');
+  const div = document.getElementById('{{ id }}__div');
+  iframe.style.width = `${div.scrollWidth}px`;
+  window.addEventListener("message", (event, origin) => {
+    const url = new URL('{{ url }}', location);
+    if (event.source.location.toString() !== url.toString()) {
+      return;
+    }
+    const { height } = event.data;
+    if (height) {
+      div.style.height = `${height}px`;
+      iframe.style.height = `${height}px`;
+    }
+  });
+</script>

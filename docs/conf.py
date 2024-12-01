@@ -15,6 +15,8 @@ extensions = [
     "sphinx.ext.todo",
     # Third-party extensions
     "atsphinx.mini18n",
+    # My extensions
+    "atsphinx.toybox.stlite",
 ]
 templates_path = ["_templates", get_mini18n_template_dir()]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
