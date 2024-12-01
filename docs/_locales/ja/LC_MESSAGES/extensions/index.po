@@ -20,21 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../index.rst:3
-msgid "atsphinx-toybox"
+#: ../../extensions/index.rst:3
+msgid "Extensions"
 msgstr ""
 
-#: ../../index.rst:6
-msgid "Overview"
-msgstr "概要"
-
-#: ../../index.rst:8
-msgid "This is attakei's alpha-level Sphinx-extensions."
-msgstr "これは、attakeiが実験的に作っているSphinx拡張群です。"
-
-#~ msgid "Todo"
-#~ msgstr ""
-
-#~ msgid "Write it"
-#~ msgstr ""
+#: ../../extensions/index.rst:5
+msgid "Index of toybox extensions. Subpages have overview, usage and **demo**."
+msgstr "toybox内の拡張一覧です。各サブページには、拡張ごとの概要、使用法、 **デモ** が書かれています。"
 

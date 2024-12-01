@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, Kazuya Takei
+# This file is distributed under the same license as the atsphinx-toybox
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: atsphinx-toybox 0.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-01 13:31+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../extensions/stlite/index.rst:3
+msgid "atsphinx.toybox.stlite"
+msgstr ""
+
+#: ../../extensions/stlite/index.rst:6
+msgid "Overview"
+msgstr "概要"
+
+#: ../../extensions/stlite/index.rst:8
+msgid "This it to embed Stlite content into your documents."
+msgstr "この拡張は、Stlite製のコンテンツをドキュメントに埋め込めるようにするものです。"
+
+#: ../../extensions/stlite/index.rst:11
+msgid "Usage"
+msgstr "使用法"
+
+#: ../../extensions/stlite/index.rst:14
+msgid "Enable extension"
+msgstr "拡張の有効化"
+
+#: ../../extensions/stlite/index.rst:16
+msgid "Add this into your ``conf.py`` of Sphinx."
+msgstr "あなたのSphinxドキュメントにある ``conf.py`` に追加して下さい。"
+
+#: ../../extensions/stlite/index.rst:18
+msgid "conf.py"
+msgstr ""
+
+#: ../../extensions/stlite/index.rst:26
+msgid "Configuration"
+msgstr "設定"
+
+#: ../../extensions/stlite/index.rst:28
+msgid "There are not configuration options."
+msgstr "追加の設定項目はありません。"
+
+#: ../../extensions/stlite/index.rst:31
+msgid "Demo"
+msgstr "デモ"
+
+#: ../../extensions/stlite/index.rst:33
+msgid "If you want to see source, please jump to repo by button on top of page."
+msgstr "ソースを見たい場合は、ページ上部にあるボタンからアクセスしてください。"
+
+#: ../../extensions/stlite/index.rst:52
+msgid "Refs"
+msgstr ""
+
+#: ../../extensions/stlite/index.rst:54
+msgid "`Stlite website <https://stlite.net/>`_"
+msgstr ""
+
+#: ../../extensions/stlite/index.rst:55
+msgid "`Stlite repository <https://github.com/whitphx/stlite>`_"
+msgstr ""
+
