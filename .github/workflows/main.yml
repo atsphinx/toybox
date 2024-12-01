@@ -56,10 +56,20 @@ jobs:
         run: |
           uv run pytest
   docs-test:
-    runs-on: ubuntu-latest
+    runs-on: '${{ matrix.runner }}'
+    strategy:
+      max-parallel: 4
+      matrix:
+        runner:
+          - 'ubuntu-latest'
+          - 'windows-latest'
+          - 'macos-latest'
+          - 'macos-13'
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Configure dependencies'
         run: |
           uv sync --frozen --all-extras
