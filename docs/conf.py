@@ -16,6 +16,7 @@ extensions = [
     # Third-party extensions
     "atsphinx.mini18n",
     # My extensions
+    "atsphinx.toybox.sass",
     "atsphinx.toybox.stlite",
 ]
 templates_path = ["_templates", get_mini18n_template_dir()]
