@@ -21,9 +21,11 @@ jobs:
       - name: 'Configure dependencies'
         run: |
           uv sync --frozen --all-extras
+          cd docs
+          pnpm install
       - name: 'Build document'
         run: |
-          task setup docs:build
+          task docs:build
       - name: 'Upload artifact'
         uses: actions/upload-pages-artifact@v3
         with:
