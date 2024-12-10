@@ -2,6 +2,18 @@
 Change logs
 ===========
 
+v2024.12.11
+===========
+
+:Date: 2024-12-11 (JST)
+
+Features
+--------
+
+* ``atsphinx.toybox.lindera_search``
+
+  * Add new extension!
+
 v2024.12.2
 ==========
 
