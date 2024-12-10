@@ -21,9 +21,9 @@ tasks:
   release-*:
     desc: 'Run release process'
     vars:
-      LEVEL: '{{index .MATCH 0}}'
+      VERSION: '{{index .MATCH 0}}'
     cmds:
-      - 'age {{.LEVEL}}'
+      - 'age update {{.VERSION}}'
       - 'uv sync'  # To write out as lock-file
 
 includes:
