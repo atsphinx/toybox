@@ -13,4 +13,4 @@ class LinderaSplitter(BaseSplitter):
         self.tokenizer = Tokenizer(self.segmenter)
 
     def split(self, input: str) -> list[str]:  # noqa: D102
-        return [token.text for token in self.tokenizer(input)]
+        return [token.text for token in self.tokenizer.tokenize(input)]
