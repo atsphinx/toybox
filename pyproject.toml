@@ -42,6 +42,9 @@ Documentation = "https://atsphinx.github.io/toybox"
 sass = [
     "httpx>=0.28.0",
 ]
+lindera-search = [
+    "lindera-py>=0.38.4",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -77,5 +80,5 @@ only-includes = ["src/atsphinx"]
 exclude = 'conf\.py$'
 
 [[tool.mypy.overrides]]
-module = ['docutils', 'docutils.*']
+module = ['docutils', 'docutils.*', 'lindera_py']
 ignore_missing_imports = true

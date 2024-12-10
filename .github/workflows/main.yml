@@ -72,6 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Configure dependencies'
         run: |
+          echo '3.11' > .python-version
           uv sync --frozen --all-extras
       - name: 'Run tests'
         run: |
