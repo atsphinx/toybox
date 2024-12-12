@@ -1,3 +1,3 @@
-Release atsphinx-toybox v2024.12.11
+Release atsphinx-toybox v2024.12.12
 
-- Changelog is https://github.com/atsphinx/toybox/blob/v2024.12.11/CHANGES.rst
+- Changelog is https://github.com/atsphinx/toybox/blob/v2024.12.12/CHANGES.rst

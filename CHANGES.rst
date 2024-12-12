@@ -2,6 +2,18 @@
 Change logs
 ===========
 
+v2024.12.12
+===========
+
+:Date: 2024-12-12 (JST)
+
+Fixes
+-----
+
+* ``atsphinx.toybox.lindera_search``
+
+  * Fix tokenize proc
+
 v2024.12.11
 ===========
 

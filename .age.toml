@@ -1,4 +1,4 @@
-current_version = "2024.12.11"
+current_version = "2024.12.12"
 
 [[files]]
 path = "pyproject.toml"
