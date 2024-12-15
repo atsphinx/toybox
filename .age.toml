@@ -19,5 +19,6 @@ replace = "Release atsphinx-toybox v{{ new_version }}"
 
 [[files]]
 path = ".github/release-body.md"
-search = "- Changelog is https://github.com/atsphinx/toybox/blob/v{{ current_version }}/CHANGES.rst"
-replace = "- Changelog is https://github.com/atsphinx/toybox/blob/v{{ new_version }}/CHANGES.rst"
+regex = true
+search = "Changelog is .+"
+replace = "Changelog is https://github.com/atsphinx/toybox/compere/v{{ current_version }}...v{{ new_version }}"
