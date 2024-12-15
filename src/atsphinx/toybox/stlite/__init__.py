@@ -28,12 +28,16 @@ def visit_stlite(self, node: stlite):
     """Inject br tag (html only)."""
     app: Sphinx = self.builder.app
     widget_uri = f"_widgets/{node['id']}"
-    out = app.outdir / widget_uri / "index.html"
     docname = app.env.path2doc(node.document["source"])
     if docname is None:
         logger.warning("It failed to resolve docname of document.")
         return
     widget_url = app.builder.get_relative_uri(docname, widget_uri)
+    out_url = app.builder.get_target_uri(widget_uri)
+    if out_url.endswith("/"):
+        out_url = f"{out_url}index.html"
+    print(widget_uri, widget_url, out_url)
+    out = app.outdir / out_url
     out.parent.mkdir(exist_ok=True, parents=True)
     out.write_text(page_template.render(node.attributes), encoding="utf8")
     self.body.append(view_template.render(node.attributes, url=widget_url))
