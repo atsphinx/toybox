@@ -20,7 +20,7 @@ def find_pyoroject(conf_py: Path) -> Optional[Path]:  # noqa: D103
 def load():
     """Load configuration values from pyproect.toml."""
     caller = inspect.stack()[1]
-    conf_py = Path(caller.filename)
+    conf_py = Path(caller.filename).resolve()
     pyproject_toml = find_pyoroject(conf_py)
     if pyproject_toml is None:
         raise ValueError()
