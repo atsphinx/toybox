@@ -31,6 +31,7 @@ classifiers = [
 ]
 readme = "README.rst"
 dependencies = [
+    "atsphinx-bulma>=0.2.0",
     "sphinx",
 ]
 
@@ -53,10 +54,10 @@ build-backend = "hatchling.build"
 [tool.uv]
 managed = true
 dev-dependencies = [
+    "atsphinx-goto-top>=0.1.1",
     "atsphinx-mini18n",
     "doc8",
     "esbonio",
-    "furo",
     "mypy",
     "pytest",
     "sphinx-autobuild",
@@ -98,6 +99,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     # Third-party extensions
+    "atsphinx.goto_top",
     "atsphinx.mini18n",
     "sphinx_toolbox.confval",
     # My extensions
@@ -105,13 +107,14 @@ extensions = [
     "atsphinx.toybox.stlite",
 ]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "node_modules"]
+templates_path = ["_templates"]
 
 # -- Options for i18n
 gettext_compact = false
 locale_dirs = ["_locales"]
 
 # -- Options for HTML output
-html_theme = "furo"
+html_theme = "bulma-basic"
 html_static_path = ["_static"]
 html_title = "atsphinx-toybox v2024.12.25"
 html_css_files = [
@@ -126,6 +129,9 @@ intersphinx_mapping = { sphinx = ["https://www.sphinx-doc.org/en/master", {}] }
 # sphinx.ext.intersphinx
 # sphinx.ext.todo
 todo_include_todos = true
+# atsphinx.goto_top
+goto_top_design = "image"
+goto_top_side = "left"
 # atsphinx.mini18n
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
@@ -135,16 +141,12 @@ sass_load_paths = ["./node_modules"]
 sass_extra_options = ["--update", "-q"]
 
 [tool.sphinx-build.docs.html_theme_options]
-footer_icons = [
+navbar_icons = [
     { name = "GitHub", url = "https://github.com/atsphinx/toybox/", html = "", class = "fa-brands fa-solid fa-github fa-2x" },
 ]
 [tool.sphinx-build.docs.html_sidebars]
 "**" = [
-    "sidebar/scroll-start.html",
-    "sidebar/brand.html",
-    "mini18n/snippets/select-lang.html",
-    "sidebar/search.html",
-    "sidebar/navigation.html",
-    "sidebar/ethical-ads.html",
-    "sidebar/scroll-end.html",
+    "select-lang.html",
+    "sidebar/searchbox.html",
+    "sidebar/localtoc.html",
 ]
