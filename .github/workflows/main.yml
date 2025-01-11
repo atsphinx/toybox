@@ -74,6 +74,8 @@ jobs:
         run: |
           echo '3.11' > .python-version
           uv sync --frozen --all-extras
+          cd docs
+          pnpm install
       - name: 'Run tests'
         run: |
           task setup docs:build-linkcheck docs:build-dirhtml
