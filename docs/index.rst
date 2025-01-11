@@ -13,3 +13,4 @@ This is attakei's alpha-level Sphinx-extensions.
    guide
    extensions/index
    components/index
+   utils/index
