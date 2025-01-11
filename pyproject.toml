@@ -82,3 +82,67 @@ exclude = 'conf\.py$'
 [[tool.mypy.overrides]]
 module = ['docutils', 'docutils.*', 'lindera_py']
 ignore_missing_imports = true
+
+[tool.sphinx-build.docs]
+# -- Project information
+project = "atsphinx-toybox"
+copyright = "2024, Kazuya Takei"
+author = "Kazuya Takei"
+release = "2024.12.25"
+
+# -- General configuration
+extensions = [
+    # Bundled extensions
+    "sphinx.ext.githubpages",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
+    # Third-party extensions
+    "atsphinx.mini18n",
+    # My extensions
+    "atsphinx.toybox.sass",
+    "atsphinx.toybox.stlite",
+]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "node_modules"]
+
+# -- Options for i18n
+gettext_compact = false
+locale_dirs = ["_locales"]
+
+# -- Options for HTML output
+html_theme = "furo"
+html_static_path = ["_static"]
+html_title = "atsphinx-toybox v2024.12.25"
+html_css_files = [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
+    "css/demo.css",
+]
+
+# -- Options for extensions
+intersphinx_mapping = { sphinx = ["https://www.sphinx-doc.org/en/master", {}] }
+# sphinx.ext.intersphinx
+# sphinx.ext.todo
+todo_include_todos = true
+# atsphinx.mini18n
+mini18n_default_language = "en"
+mini18n_support_languages = ["en", "ja"]
+mini18n_basepath = "/toybox/"
+# atsphinx.toybox.sass
+sass_load_paths = ["./node_modules"]
+sass_extra_options = ["--update", "-q"]
+
+[tool.sphinx-build.docs.html_theme_options]
+footer_icons = [
+    { name = "GitHub", url = "https://github.com/atsphinx/toybox/", html = "", class = "fa-brands fa-solid fa-github fa-2x" },
+]
+[tool.sphinx-build.docs.html_sidebars]
+"**" = [
+    "sidebar/scroll-start.html",
+    "sidebar/brand.html",
+    "mini18n/snippets/select-lang.html",
+    "sidebar/search.html",
+    "sidebar/navigation.html",
+    "sidebar/ethical-ads.html",
+    "sidebar/scroll-end.html",
+]
