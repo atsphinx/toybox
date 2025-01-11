@@ -61,6 +61,7 @@ dev-dependencies = [
     "pytest",
     "sphinx-autobuild",
     "sphinx-intl",
+    "sphinx-toolbox>=3.8.1",
 ]
 
 [tool.ruff.lint]
@@ -98,6 +99,7 @@ extensions = [
     "sphinx.ext.todo",
     # Third-party extensions
     "atsphinx.mini18n",
+    "sphinx_toolbox.confval",
     # My extensions
     "atsphinx.toybox.sass",
     "atsphinx.toybox.stlite",

@@ -5,12 +5,3 @@ from atsphinx.toybox.pyproject import load
 templates_path = ["_templates", get_mini18n_template_dir()]
 
 load()
-
-
-def setup(app):
-    app.add_object_type(
-        "confval",
-        "confval",
-        objname="configuration value",
-        indextemplate="pair: %s; configuration value",
-    )
