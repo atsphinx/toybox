@@ -30,7 +30,20 @@ Configuration
 
 There are not configuration options.
 
-.. note:: I will add some optioons.
+.. confval:: sass_load_paths
+   :type: list[str]
+   :default: ``[]``
+
+   List of paths for external modules.
+   This is useful to compile SASS/SCSS with third-party libraries.
+
+.. confval:: sass_extra_options
+   :type: list[str]
+   :default: ``[]``
+
+   Extra options for compile.
+
+   See also: https://sass-lang.com/documentation/cli/dart-sass/
 
 Demo
 ====
