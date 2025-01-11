@@ -92,7 +92,7 @@ wheels = [
 
 [[package]]
 name = "atsphinx-toybox"
-version = "2024.12.15"
+version = "2025.1.11"
 source = { editable = "." }
 dependencies = [
     { name = "atsphinx-bulma" },
