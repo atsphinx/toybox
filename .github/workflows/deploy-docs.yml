@@ -26,6 +26,7 @@ jobs:
       - name: 'Build document'
         run: |
           task docs:build
+          ls -Rl docs/_build/mini18n-dirhtml
       - name: 'Upload artifact'
         uses: actions/upload-pages-artifact@v3
         with:
