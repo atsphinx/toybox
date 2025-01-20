@@ -27,7 +27,11 @@ Add this into your ``conf.py`` of Sphinx.
 Configuration
 -------------
 
-There are not configuration options.
+.. confval:: stlite_version
+   :type: str
+   :default: |default_stlite_version|
+
+   Using Stlite version.
 
 Demo
 ====
