@@ -12,7 +12,7 @@ from sphinx.util import logging
 
 from .. import utils
 
-STLITE_VERSION = "0.76.0"
+DEFAULT_STLITE_VERSION = "0.76.0"
 
 package_root = Path(__file__).parent
 logger = logging.getLogger(__name__)
@@ -26,10 +26,9 @@ class stlite(nodes.Element, nodes.General):  # noqa: D101
 
 def visit_stlite(self, node: stlite):
     """Inject br tag (html only)."""
-    # TODO: Bypass stlite_version from config?
-    # app: Sphinx = self.builder.app
+    app: Sphinx = self.builder.app
     self.body.append(
-        view_template.render(node.attributes, stlite_version=STLITE_VERSION)
+        view_template.render(node.attributes, stlite_version=app.config.stlite_version)
     )
 
 
@@ -69,8 +68,9 @@ def inject_stlite_assets(
     if not list(doctree.findall(stlite)):
         return
 
+    stlite_version = app.config.stlite_version
     context["css_files"] += [
-        f"https://cdn.jsdelivr.net/npm/@stlite/browser@{STLITE_VERSION}/build/style.css",
+        f"https://cdn.jsdelivr.net/npm/@stlite/browser@{stlite_version}/build/style.css",
         _CascadingStyleSheet("_static/atsphinx-stlite.css"),
     ]
 
@@ -78,6 +78,7 @@ def inject_stlite_assets(
 def setup(app: Sphinx):  # noqa: D103
     app.add_node(stlite, html=(visit_stlite, utils.pass_node_walking))
     app.add_directive("stlite", Stlite)
+    app.add_config_value("stlite_version", DEFAULT_STLITE_VERSION, "html", str)
     app.connect("config-inited", register_static_path)
     app.connect("html-page-context", inject_stlite_assets)
     return {}
