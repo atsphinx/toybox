@@ -1,0 +1,7 @@
+.stlite-root .stApp {
+	position: relative;
+	.stAppHeader,
+	.stAppViewContainer {
+		position: relative;
+	}
+}

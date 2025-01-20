@@ -7,16 +7,16 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives  # type:ignore
 from jinja2 import Template
 from sphinx.application import Sphinx
+from sphinx.builders.html._assets import _CascadingStyleSheet
 from sphinx.util import logging
 
 from .. import utils
 
-STLITE_VERSION = "0.73.0"
+STLITE_VERSION = "0.76.0"
 
 package_root = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
-page_template = Template((package_root / "page.html.jinja").read_text(encoding="utf8"))
 view_template = Template((package_root / "view.html.jinja").read_text(encoding="utf8"))
 
 
@@ -26,21 +26,11 @@ class stlite(nodes.Element, nodes.General):  # noqa: D101
 
 def visit_stlite(self, node: stlite):
     """Inject br tag (html only)."""
-    app: Sphinx = self.builder.app
-    widget_uri = f"_widgets/{node['id']}"
-    docname = app.env.path2doc(node.document["source"])
-    if docname is None:
-        logger.warning("It failed to resolve docname of document.")
-        return
-    widget_url = app.builder.get_relative_uri(docname, widget_uri)
-    out_url = app.builder.get_target_uri(widget_uri)
-    if out_url.endswith("/"):
-        out_url = f"{out_url}index.html"
-    print(widget_uri, widget_url, out_url)
-    out = app.outdir / out_url
-    out.parent.mkdir(exist_ok=True, parents=True)
-    out.write_text(page_template.render(node.attributes), encoding="utf8")
-    self.body.append(view_template.render(node.attributes, url=widget_url))
+    # TODO: Bypass stlite_version from config?
+    # app: Sphinx = self.builder.app
+    self.body.append(
+        view_template.render(node.attributes, stlite_version=STLITE_VERSION)
+    )
 
 
 class Stlite(Directive):  # noqa: D101
@@ -62,6 +52,10 @@ class Stlite(Directive):  # noqa: D101
         ]
 
 
+def register_static_path(app, config):  # noqa: D103
+    config.html_static_path.insert(0, str(package_root / "static"))
+
+
 def inject_stlite_assets(
     app: Sphinx,
     pagename: str,
@@ -72,19 +66,18 @@ def inject_stlite_assets(
     """Update context when document will render stlite content."""
     if not doctree:
         return
-    if not doctree.findall(stlite):
+    if not list(doctree.findall(stlite)):
         return
 
-    context["script_files"].append(
-        f"https://cdn.jsdelivr.net/npm/@stlite/mountable@{STLITE_VERSION}/build/stlite.js"
-    )
-    context["css_files"].append(
-        f"https://cdn.jsdelivr.net/npm/@stlite/mountable@{STLITE_VERSION}/build/stlite.css"
-    )
+    context["css_files"] += [
+        f"https://cdn.jsdelivr.net/npm/@stlite/browser@{STLITE_VERSION}/build/style.css",
+        _CascadingStyleSheet("_static/atsphinx-stlite.css"),
+    ]
 
 
 def setup(app: Sphinx):  # noqa: D103
     app.add_node(stlite, html=(visit_stlite, utils.pass_node_walking))
     app.add_directive("stlite", Stlite)
+    app.connect("config-inited", register_static_path)
     app.connect("html-page-context", inject_stlite_assets)
     return {}
