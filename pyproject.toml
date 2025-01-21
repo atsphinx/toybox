@@ -1,6 +1,6 @@
 [project]
 name = "atsphinx-toybox"
-version = "2025.1.11"
+version = "2025.1.21"
 description = "Miscellaneous sphinx-extension collection of attakei' trials."
 authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]
 license = "Apache-2.0"
