@@ -90,7 +90,7 @@ ignore_missing_imports = true
 project = "atsphinx-toybox"
 copyright = "2024, Kazuya Takei"
 author = "Kazuya Takei"
-release = "2024.12.25"
+release = "2025.1.21"
 
 # -- General configuration
 extensions = [
@@ -116,7 +116,7 @@ locale_dirs = ["_locales"]
 # -- Options for HTML output
 html_theme = "bulma-basic"
 html_static_path = ["_static"]
-html_title = "atsphinx-toybox v2024.12.25"
+html_title = "atsphinx-toybox v2025.1.21"
 html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css",
