@@ -105,6 +105,7 @@ extensions = [
     # My extensions
     "atsphinx.toybox.sass",
     "atsphinx.toybox.stlite",
+    "atsphinx.toybox.text_to_speech",
 ]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "node_modules"]
 templates_path = ["_templates"]
