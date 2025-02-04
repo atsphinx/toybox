@@ -10,6 +10,8 @@ from sphinx.domains import Domain
 from sphinx.environment import BuildEnvironment
 from sphinx.util.docutils import SphinxDirective
 
+from .engines import load_engine
+
 
 class tts(nodes.General, nodes.Element):  # noqa: D101
     pass
@@ -49,11 +51,19 @@ class TTSBuilder(DummyBuilder):
     epilog = "FUTURE: generate audio files from sources."
 
     def finish(self):  # noqa: D102
+        engine = load_engine(self.config.tts_engine, self.config.tts_options)
         domain: Optional[TextToSpeechDomain] = self.env.domains.get(__name__)  # type: ignore
         if not domain:
             raise Exception("Domain is not found.")
         for text, uuid in domain.texts.items():
-            print(uuid, text)
+            outdir = self.outdir.joinpath("_static/_tts")
+            outdir.mkdir(parents=True, exist_ok=True)
+            filepath = outdir.joinpath(f"{uuid}.{engine.format}")
+            if not filepath.exists():
+                print("NEW", uuid, text)
+                engine.generate_audio(text, filepath)
+            else:
+                print("   ", uuid, text)
 
 
 def skip_it(self, node: nodes.Node):  # noqq: D104
@@ -62,6 +72,7 @@ def skip_it(self, node: nodes.Node):  # noqq: D104
 
 def setup(app: Sphinx):  # noqa: D103
     app.add_config_value("tts_engine", "dummy", "env")
+    app.add_config_value("tts_options", {}, "env")
     app.add_node(tts, html=(skip_it, None))
     app.add_directive("tts", TTSDirective)
     app.add_domain(TextToSpeechDomain)
