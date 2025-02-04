@@ -46,6 +46,9 @@ sass = [
 lindera-search = [
     "lindera-py>=0.38.4",
 ]
+aws = [
+    "boto3>=1.36.12",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -56,6 +59,7 @@ managed = true
 dev-dependencies = [
     "atsphinx-goto-top>=0.1.1",
     "atsphinx-mini18n",
+    "boto3-stubs[polly]>=1.36.12",
     "doc8",
     "esbonio",
     "mypy",
