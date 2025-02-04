@@ -1,10 +1,11 @@
 import importlib
 from dataclasses import dataclass
 from pathlib import Path
-from typing import ClassVar, TypedDict
+from typing import ClassVar, Type
 
 
-class Options(TypedDict):
+@dataclass
+class Options:
     """Base class of options."""
 
     pass
@@ -31,10 +32,12 @@ class Provider:
         raise NotImplementedError
 
 
-def load_provider(name: str, options: Options) -> Provider:
+def load_provider(name: str, config: dict) -> Provider:
     """Resolve and load provider object."""
     module_name = f"{__name__}.{name}"
-    class_name = f"{name.title()}Provider"
+    provider_class = f"{name.title()}Provider"
+    options_class = f"{name.title()}Options"
     module = importlib.import_module(module_name)
-    klass = getattr(module, class_name)
-    return klass(options=options)
+    provider: Type[Provider] = getattr(module, provider_class)
+    options: Options = getattr(module, options_class)(**config)
+    return provider(options=options)

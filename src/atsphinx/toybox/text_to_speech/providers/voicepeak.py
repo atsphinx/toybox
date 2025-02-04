@@ -23,7 +23,7 @@ class VoicepeakProvider(Provider):
     def generate_audio(self, text: str, out: Path, extra: dict = {}):
         text_line = text.replace("\n", " ")
         command = [
-            str(self.options["execute_path"]),
+            str(self.options.execute_path),
             "-s",
             f"'{text_line}'",
             "-o",

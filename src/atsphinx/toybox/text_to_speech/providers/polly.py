@@ -15,8 +15,8 @@ else:
 
 
 class PollyOptions(Options):
-    engine: str
-    voice_id: str
+    engine: str = "standard"
+    voice_id: str = "Matthew"
 
 
 @dataclass
@@ -30,9 +30,9 @@ class PollyProvider(Provider):
 
     def generate_audio(self, text: str, out: Path, extra: dict = {}):
         resp = self.client.synthesize_speech(
-            Engine=self.options["engine"],  # type: ignore[arg-type]
+            Engine=self.options.engine,  # type: ignore[arg-type]
             OutputFormat=self.format,  # type: ignore[arg-type]
             Text=text,
-            VoiceId=self.options["voice_id"],  # type: ignore[arg-type]
+            VoiceId=self.options.voice_id,  # type: ignore[arg-type]
         )
         out.write_bytes(resp["AudioStream"].read())
