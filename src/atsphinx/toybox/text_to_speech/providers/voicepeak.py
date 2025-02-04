@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import ClassVar, Union
 
-from . import Engine, Options
+from . import Options, Provider
 
 
 class VoicepeakOptions(Options):
@@ -13,9 +13,12 @@ class VoicepeakOptions(Options):
 
 
 @dataclass
-class VoicepeakEngine(Engine):
+class VoicepeakProvider(Provider):
     format: ClassVar[str] = "wav"
     options: VoicepeakOptions
+
+    def load(self):
+        pass
 
     def generate_audio(self, text: str, out: Path, extra: dict = {}):
         text_line = text.replace("\n", " ")
