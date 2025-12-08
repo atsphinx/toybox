@@ -4,7 +4,7 @@ version = "2025.1.21"
 description = "Miscellaneous sphinx-extension collection of attakei' trials."
 authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]
 license = "Apache-2.0"
-requires-python = ">= 3.9"
+requires-python = ">= 3.10"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Framework :: Sphinx",
@@ -14,7 +14,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -31,7 +30,6 @@ classifiers = [
 ]
 readme = "README.rst"
 dependencies = [
-    "atsphinx-bulma>=0.2.0",
     "sphinx",
 ]
 
@@ -64,6 +62,7 @@ test = [
     "pytest",
 ]
 docs = [
+    "atsphinx-bulma>=0.4.1",
     "atsphinx-goto-top>=0.1.1",
     "atsphinx-mini18n",
     "sphinx-toolbox>=3.8.1",
