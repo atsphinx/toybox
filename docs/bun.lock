@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "docs",
+      "dependencies": {
+        "bulma": "^1.0.2",
+      },
+    },
+  },
+  "packages": {
+    "bulma": ["bulma@1.0.2", "", {}, "sha512-D7GnDuF6seb6HkcnRMM9E739QpEY9chDzzeFrHMyEns/EXyDJuQ0XA0KxbBl/B2NTsKSoDomW61jFGFaAxhK5A=="],
+  }
+}

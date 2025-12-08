@@ -47,23 +47,31 @@ lindera-search = [
     "lindera-py>=0.38.4",
 ]
 
+[dependency-groups]
+dev = [
+    "esbonio",
+    "sphinx-autobuild",
+    "sphinx-intl",
+    { include-group = "lint"},
+    { include-group = "test"},
+    { include-group = "docs"},
+]
+lint = [
+    "doc8",
+    "mypy",
+]
+test = [
+    "pytest",
+]
+docs = [
+    "atsphinx-goto-top>=0.1.1",
+    "atsphinx-mini18n",
+    "sphinx-toolbox>=3.8.1",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-[tool.uv]
-managed = true
-dev-dependencies = [
-    "atsphinx-goto-top>=0.1.1",
-    "atsphinx-mini18n",
-    "doc8",
-    "esbonio",
-    "mypy",
-    "pytest",
-    "sphinx-autobuild",
-    "sphinx-intl",
-    "sphinx-toolbox>=3.8.1",
-]
 
 [tool.ruff.lint]
 select = ["C90", "D", "E", "F", "I", "W"]
