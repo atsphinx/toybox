@@ -93,7 +93,8 @@ def setup_dart_sass(version: str, dist: Path) -> Path:
     if not fullpath.exists():
         logger.debug(f"Binary archive is {release.archive_url}")
         resp = httpx.get(release.archive_url, follow_redirects=True)
-        archive_path = Path(tempfile.mktemp())
+        _, dir = tempfile.mkstemp()
+        archive_path = Path(dir)
         archive_path.write_bytes(resp.content)
         shutil.unpack_archive(archive_path, dist, release.archive_format)
     return fullpath
