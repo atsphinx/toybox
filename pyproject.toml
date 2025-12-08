@@ -57,7 +57,8 @@ dev = [
 ]
 lint = [
     "doc8",
-    "mypy",
+    "ruff>=0.14.8",
+    "ty>=0.0.1a32",
 ]
 test = [
     "pytest",
@@ -85,13 +86,6 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/atsphinx"]
 only-includes = ["src/atsphinx"]
-
-[tool.mypy]
-exclude = 'conf\.py$'
-
-[[tool.mypy.overrides]]
-module = ['docutils', 'docutils.*', 'lindera_py']
-ignore_missing_imports = true
 
 [tool.sphinx-build.docs]
 # -- Project information
