@@ -9,14 +9,14 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * 5'  # 18:00 on Friday JST
+    - cron: '0 9 * * 5' # 18:00 on Friday JST
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: 'Configure dependencies'
         run: |
           uv sync --frozen --all-extras
@@ -29,15 +29,16 @@ jobs:
       max-parallel: 4
       matrix:
         python-version:
-          - '3.9'
           - '3.10'
           - '3.11'
           - '3.12'
           - '3.13'
+          # TODO: Fix after
+          # - '3.14'
         workspace: ['locked', 'latest']
     steps:
       - uses: actions/checkout@v3
-      - uses: jdx/mise-action@v2
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: 'Setup python'
         id: 'setup-python'
         run: |
@@ -64,18 +65,15 @@ jobs:
           - 'ubuntu-latest'
           - 'windows-latest'
           - 'macos-latest'
-          - 'macos-13'
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: 'Configure dependencies'
         run: |
           echo '3.11' > .python-version
           uv sync --frozen --all-extras
           cd docs
-          pnpm install
+          bun install
       - name: 'Run tests'
         run: |
           task setup docs:build-linkcheck docs:build-dirhtml
@@ -83,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: 'Try building as package'
         run: |
           uv build

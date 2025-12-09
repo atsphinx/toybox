@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: 'Build package'
         run: |
           uv build
@@ -62,8 +62,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v2
-      - uses: arduino/setup-task@v2
+      - uses: 'atsphinx/.github/actions/setup-aqua@main'
       - name: Build document
         run: |
           task setup docs:build

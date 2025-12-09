@@ -6,9 +6,11 @@ vars:
 
 tasks:
   setup:
-    desc: 'Setup workspace'
+    desc: 'Setup workspace for development'
     cmds:
-      - 'uv sync --frozen --all-extras'
+      - 'uv sync --all-extras --all-groups --frozen'
+      - 'lefthook install'
+      - 'cd docs && bun install'
   verify:
     desc: 'Verify environment by all procs'
     cmds:
@@ -24,7 +26,7 @@ tasks:
       VERSION: '{{index .MATCH 0}}'
     cmds:
       - 'age update {{.VERSION}}'
-      - 'uv sync --all-extras'  # To write out as lock-file
+      - 'uv sync --all-extras --all-groups ' # To write out as lock-file
 
 includes:
   docs: './docs'

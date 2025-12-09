@@ -1,6 +1,10 @@
 """Tokenize override by Lindera."""
 
-from lindera_py import Segmenter, Tokenizer, load_dictionary
+from lindera_py import (
+    Segmenter,  # type: ignore[unresolved-import]
+    Tokenizer,  # type: ignore[unresolved-import]
+    load_dictionary,  # type: ignore[unresolved-import]
+)
 from sphinx.search.ja import BaseSplitter
 
 

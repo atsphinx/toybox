@@ -4,7 +4,7 @@ version = "2025.1.21"
 description = "Miscellaneous sphinx-extension collection of attakei' trials."
 authors = [{name = "Kazuya Takei", email = "myself@attakei.net"}]
 license = "Apache-2.0"
-requires-python = ">= 3.9"
+requires-python = ">= 3.10"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Framework :: Sphinx",
@@ -14,11 +14,12 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    # TODO: Fix after
+    # "Programming Language :: Python :: 3.14",
     "Topic :: Documentation",
     "Topic :: Documentation :: Sphinx",
     "Topic :: Software Development",
@@ -31,7 +32,6 @@ classifiers = [
 ]
 readme = "README.rst"
 dependencies = [
-    "atsphinx-bulma>=0.2.0",
     "sphinx",
 ]
 
@@ -47,23 +47,33 @@ lindera-search = [
     "lindera-py>=0.38.4",
 ]
 
+[dependency-groups]
+dev = [
+    "esbonio",
+    "sphinx-autobuild",
+    "sphinx-intl",
+    { include-group = "lint"},
+    { include-group = "test"},
+    { include-group = "docs"},
+]
+lint = [
+    "doc8",
+    "ruff>=0.14.8",
+    "ty>=0.0.1a32",
+]
+test = [
+    "pytest",
+]
+docs = [
+    "atsphinx-bulma>=0.4.1",
+    "atsphinx-goto-top>=0.1.1",
+    "atsphinx-mini18n",
+    "sphinx-toolbox>=3.8.1",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-[tool.uv]
-managed = true
-dev-dependencies = [
-    "atsphinx-goto-top>=0.1.1",
-    "atsphinx-mini18n",
-    "doc8",
-    "esbonio",
-    "mypy",
-    "pytest",
-    "sphinx-autobuild",
-    "sphinx-intl",
-    "sphinx-toolbox>=3.8.1",
-]
 
 [tool.ruff.lint]
 select = ["C90", "D", "E", "F", "I", "W"]
@@ -77,13 +87,6 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/atsphinx"]
 only-includes = ["src/atsphinx"]
-
-[tool.mypy]
-exclude = 'conf\.py$'
-
-[[tool.mypy.overrides]]
-module = ['docutils', 'docutils.*', 'lindera_py']
-ignore_missing_imports = true
 
 [tool.sphinx-build.docs]
 # -- Project information

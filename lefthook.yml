@@ -6,13 +6,13 @@ pre-commit:
   commands:
     ruff:
       glob: '*.py'
-      run: 'uvx ruff format {staged_files}'
+      run: 'uv run ruff check {staged_files}'
       stage_fixed: true
-    mypy:
+    ty:
       glob: '*.py'
       exclude:
         - '**/conf.py'
-      run: 'uv run mypy {staged_files}'
+      run: 'uv run ty check {staged_files}'
     doc8:
       glob: '*.rst'
       run: 'uvx doc8 --max-line-length=119 {staged_files}'
