@@ -106,7 +106,8 @@ dependencies = [
 
 [package.optional-dependencies]
 lindera-search = [
-    { name = "lindera-py" },
+    { name = "lindera-python" },
+    { name = "requests" },
 ]
 sass = [
     { name = "httpx" },
@@ -144,7 +145,8 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "httpx", marker = "extra == 'sass'", specifier = ">=0.28.0" },
-    { name = "lindera-py", marker = "extra == 'lindera-search'", specifier = ">=0.38.4" },
+    { name = "lindera-python", marker = "extra == 'lindera-search'", specifier = ">=3.0.4" },
+    { name = "requests", marker = "extra == 'lindera-search'" },
     { name = "sphinx" },
 ]
 provides-extras = ["sass", "lindera-search"]
@@ -535,35 +537,20 @@ wheels = [
 ]
 
 [[package]]
-name = "lindera-py"
-version = "0.45.0"
+name = "lindera-python"
+version = "3.0.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/50/dc/2a01e68fa03dd6354e2de177c42901f2f3e1d031797c0ffc12e138307b66/lindera_py-0.45.0.tar.gz", hash = "sha256:9bc0be02c5ae4cc49ec9e7da55644e02244cb791b5bd8f72e608883316dfedb1", size = 148590, upload-time = "2025-08-02T14:18:51.302Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/30/06/8497e918ced8a6faea97d0b510b126e8cd00084dc526bface87be70e45c0/lindera_py-0.45.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2d6a5a550cf54d0e10fbc11b816a605e316c3806a5931d666c8e8968041d5a35", size = 41832440, upload-time = "2025-08-02T14:17:21.547Z" },
-    { url = "https://files.pythonhosted.org/packages/ec/ae/043ff6fcb9fcc9b2e0c893a06a970f43b4b2d6f7e95458d96e1227419b6e/lindera_py-0.45.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:afa645ea8b568ea4d8363d4739269009fd17757b265d938cb7201f5da6b252cd", size = 41907788, upload-time = "2025-08-02T14:17:55.207Z" },
-    { url = "https://files.pythonhosted.org/packages/65/ab/282abae8d1e3762905d11eecd7ebb3f18c1d144ddaca85ecb9ab7bb0e5df/lindera_py-0.45.0-cp310-cp310-win_amd64.whl", hash = "sha256:d0065f1ea49521f766f23df536675cca08bc76880372eca59fba049b0e98151f", size = 41522287, upload-time = "2025-08-02T14:18:37.257Z" },
-    { url = "https://files.pythonhosted.org/packages/df/87/364e32958e324d08b122c0acc28de592b197ac49f375767c3491efc2ef4d/lindera_py-0.45.0-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:858aa7eff011cee9a642308be0c8f9bc6945b040d54cd49d532aa2676b4e32b4", size = 41740953, upload-time = "2025-08-02T14:18:29.071Z" },
-    { url = "https://files.pythonhosted.org/packages/79/75/d49ab52c7e05a690aea12a034c86459bfd31ff3e1fb822a896fdc4522f4d/lindera_py-0.45.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:ca861a06f2128949605c40fa489f6950a9b4913671b9ca39f128834a1dda7479", size = 41984711, upload-time = "2025-08-02T14:18:20.649Z" },
-    { url = "https://files.pythonhosted.org/packages/5d/e6/464b60d15c4c360f4f5611adb9280a752a6a8576871c83de45bee9bcfa2f/lindera_py-0.45.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:892e3e0dd24d00c2658e1a776d47b7c82d64fc9dde5ae535156bf4ea67d6d970", size = 41835098, upload-time = "2025-08-02T14:17:25.027Z" },
-    { url = "https://files.pythonhosted.org/packages/b2/58/6231fd5d600565d2f4f8348edf887855858a6da0ebc219f65fa17933f165/lindera_py-0.45.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b01099b90c4a18bced3486c38cf2122107f7ae40ca8520b4272ee490f9dc6fde", size = 41908104, upload-time = "2025-08-02T14:17:57.731Z" },
-    { url = "https://files.pythonhosted.org/packages/ad/0b/810a4c125107a546c7ff0cedd5df72b5f1750e1fb3347109f560788373af/lindera_py-0.45.0-cp311-cp311-win_amd64.whl", hash = "sha256:32b78dd1fe5303c0db4f0fc52831a0fdc22a0d9fc5b5acf9540a16a59bb6a6c1", size = 41522217, upload-time = "2025-08-02T14:18:40.788Z" },
-    { url = "https://files.pythonhosted.org/packages/68/37/1ee66cdb2f7d311a7778c59faa5329bb5fa355ec944d4cc1107e0bd20ff3/lindera_py-0.45.0-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:d16b629ef59a2be73637a0e0db1c2637adf466aa79dc052a2df5da444ccf8e1b", size = 41736097, upload-time = "2025-08-02T14:18:31.988Z" },
-    { url = "https://files.pythonhosted.org/packages/bf/66/77af3157087dba1554449954356cfbbb3d7fae22ea84651beee890cfa418/lindera_py-0.45.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:9d7113c335ca7402915cf024e189f3c1beb7a96f1ca7ffa628ebe2a4da252346", size = 41980066, upload-time = "2025-08-02T14:18:23.694Z" },
-    { url = "https://files.pythonhosted.org/packages/2c/98/8f6c8b3e616341a2fb2624950fb69296a60031d871ae1f0357bc6db35b9f/lindera_py-0.45.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e3cc54b90c1942296832fd04c2147bb290b01fa2d354a82704e0af8d96c3d431", size = 41832993, upload-time = "2025-08-02T14:17:28.008Z" },
-    { url = "https://files.pythonhosted.org/packages/58/b7/2b18bbd99fe6bb50484c9dac705cae10c42cc78ff0cafddee5922900f102/lindera_py-0.45.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:650794bc38b13c9cbb01efd398d23e45658ef1488c896fc1bccb0dcae6e1fe8c", size = 41907642, upload-time = "2025-08-02T14:18:00.542Z" },
-    { url = "https://files.pythonhosted.org/packages/ff/a5/4ca029122f77d50f063534c887280d2d9183b6fe6301aeec0c22d4dd3893/lindera_py-0.45.0-cp312-cp312-win_amd64.whl", hash = "sha256:cf49cd69305b4d4f47876cfd6f3900032e1d6702b9ed75abab187559cb53076e", size = 41522332, upload-time = "2025-08-02T14:18:43.408Z" },
-    { url = "https://files.pythonhosted.org/packages/1b/a9/0cc895b0bd7ca3feea9d8dc48293f2f4737886d191240a7366f895b0ff36/lindera_py-0.45.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:0f1b907b7eaeb585efe63a8166840fda274a1e77e752ce18c82e51b3f483e704", size = 41736053, upload-time = "2025-08-02T14:18:34.815Z" },
-    { url = "https://files.pythonhosted.org/packages/47/90/0491d0082cab45c4ea81983e5ed4636a05f3486e20ba4985fa39d6799083/lindera_py-0.45.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:ec4067ec92b17acd883742fb590947bf43c16b855240b6153fa00c6fe68a5cea", size = 41979207, upload-time = "2025-08-02T14:18:26.354Z" },
-    { url = "https://files.pythonhosted.org/packages/44/bd/6371f79d352a9f744d1ea34d0b13686c58b5f37399d0febc45af3798d904/lindera_py-0.45.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b23e0e03c60089c6bd8ff597b1379e89bf52c98da5cecac903cc2c7155179517", size = 41832055, upload-time = "2025-08-02T14:17:30.605Z" },
-    { url = "https://files.pythonhosted.org/packages/6c/69/e231c654817952c8b527a78074ff3444cbdf0ff2216136e4769837201947/lindera_py-0.45.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1a2e492a9822b0ace6c667cef7d535afed6e1f576d4e712a44626cfcfef60558", size = 41907234, upload-time = "2025-08-02T14:18:03.086Z" },
-    { url = "https://files.pythonhosted.org/packages/a3/12/f9f29a5877ebb7c6066897569836b6b70faa99a4331410e7a7ffda6c1c0a/lindera_py-0.45.0-cp313-cp313-win_amd64.whl", hash = "sha256:daf4ab9bff6b42c1f37671fdbeea80905cb770cd5a083337cf9481396606f35b", size = 41521879, upload-time = "2025-08-02T14:18:45.955Z" },
-    { url = "https://files.pythonhosted.org/packages/56/00/421f844043a6cba288b42d6f8b535cb2a6b99e7554cbe34e0c0a87d2d4c9/lindera_py-0.45.0-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:892a035ae6a2016744a9600e65c443dcab2a414649c1c1d89c18985109cedea0", size = 41833132, upload-time = "2025-08-02T14:17:34.021Z" },
-    { url = "https://files.pythonhosted.org/packages/fc/cf/154953017d0daa7e6c7d0a2098ef926e39f509f213dce74cf208b1b40ff4/lindera_py-0.45.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d854cb3e78471ead75213c905cb5628cc1fb5a8c923305337e24c1cdd8714050", size = 41907868, upload-time = "2025-08-02T14:18:06.327Z" },
-    { url = "https://files.pythonhosted.org/packages/82/df/b797ba8a00c39a340d7297a5a8f6b76e045685594456b5a0a7136fa0aecf/lindera_py-0.45.0-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:79445f67ac5710591773742a81b4cc50e9d37651143b5c2d346986d4f93ae2fc", size = 41835481, upload-time = "2025-08-02T14:17:45.737Z" },
-    { url = "https://files.pythonhosted.org/packages/0a/1d/1d588512ec54c6feca120c60947d5e70e12a70911ca1279ec9b987c665d4/lindera_py-0.45.0-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8730607efaab63efd7d354151108b50d614f8feb426676f63c0ee673bffa6cb9", size = 41909866, upload-time = "2025-08-02T14:18:15.206Z" },
-    { url = "https://files.pythonhosted.org/packages/f5/23/72eded314138d4b543fdb74c8c82e685b9287b9aa6d981c92d4d4f67d263/lindera_py-0.45.0-pp311-pypy311_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:de8b3834441c300dc7eef1866b120e66880bd096a2f60d2cdd42bcc76a1df899", size = 41835143, upload-time = "2025-08-02T14:17:48.745Z" },
-    { url = "https://files.pythonhosted.org/packages/66/f6/021b5df3d252386fb2f49f7f3bbe6b9d54862d7b287df54c368740d4fcb2/lindera_py-0.45.0-pp311-pypy311_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dd3e77b76c24af68dc745a22900d8eb4c20198a5c12d55a57dfb7dd954f8c40a", size = 41909451, upload-time = "2025-08-02T14:18:17.949Z" },
+    { url = "https://files.pythonhosted.org/packages/f9/9a/35202504bf1bb71f031fe839e52e6522492e1e9857d8a7b53bbdff58b5a0/lindera_python-3.0.4-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:f6d987aec4d7273193450cc4f2fd8be4236016f464d5cc518beb674c0bef9907", size = 2150466, upload-time = "2026-04-08T03:30:55.765Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/8f/09db8356fd604dedf1b430a18f512123369def5256017bf526bba15c63f3/lindera_python-3.0.4-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:555fbc457c64e77861f990e828eec13a56c9c9b42140de8cbf9831028efaf3e5", size = 2053010, upload-time = "2026-04-08T03:30:57.678Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/f2/068f34db4304d259639b7af4e991d56b4a7d66542f094afcb9acfe99abb1/lindera_python-3.0.4-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:10a37aec6e448ee43cb9c311d6e150387d7a8dd5c565fe42107afe8a83a178a2", size = 2170329, upload-time = "2026-04-08T03:30:59.718Z" },
+    { url = "https://files.pythonhosted.org/packages/69/33/f03d315003df34b28271d44d8e5971e8ea50a580517f42650f7c7283fb41/lindera_python-3.0.4-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:243a10afe05e09378e56d156ca6fecb1496f4ea83f4f1ce06607ca87ad68db3e", size = 2244638, upload-time = "2026-04-08T03:31:01.467Z" },
+    { url = "https://files.pythonhosted.org/packages/70/77/430c06bd59657ee1bf74eb4b17d24e88478932275e95ea9c274dc586a72e/lindera_python-3.0.4-cp310-abi3-win_amd64.whl", hash = "sha256:f9f05c433600fdb145dcf8ecf84e28e20b9a4eb7ffa14693115c12e7facc76d6", size = 2019881, upload-time = "2026-04-08T03:31:03.116Z" },
+    { url = "https://files.pythonhosted.org/packages/ff/3f/a0910be815d4cd13a5fb9c1080587c92e1de845df1eaa1425640f578ee98/lindera_python-3.0.4-cp310-abi3-win_arm64.whl", hash = "sha256:eb03a4771a343933be08492a27ef74188cb8c4590170b20664225d1efb1d2043", size = 1891628, upload-time = "2026-04-08T03:31:04.672Z" },
+    { url = "https://files.pythonhosted.org/packages/8b/be/45cded637f695af317b1dd95d7404efba0aa13790a210aad65071bc08ea2/lindera_python-3.0.4-cp313-cp313t-win_arm64.whl", hash = "sha256:62e9304965e9c0d240e93112d626ec19f68228221fd97299eb22ee96acae3185", size = 1885897, upload-time = "2026-04-08T03:31:06.204Z" },
+    { url = "https://files.pythonhosted.org/packages/bd/fa/cce96d5a9632ea37af87aa8a30dab6ff21ee481ecc83923796c9ddc27494/lindera_python-3.0.4-cp314-cp314t-win_arm64.whl", hash = "sha256:12fb151f7d75a9858de5e3dc4bdbd40c1e3a8217bce6d32ca2a3ec573177e5d1", size = 1885920, upload-time = "2026-04-08T03:31:07.888Z" },
+    { url = "https://files.pythonhosted.org/packages/b6/af/9bc240b77f9f19a3f0729e97a095bb738c436ffc284ca809b611babf1dc1/lindera_python-3.0.4-pp311-pypy311_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b09de4da212db45a0047fd8bc9bf2c042612c11cf518177d7fda9575947883d3", size = 2167100, upload-time = "2026-04-08T03:31:09.787Z" },
+    { url = "https://files.pythonhosted.org/packages/76/64/00c8d2992e45085eaa28869fef1f49f9f8bddb56ce606fa27f9b60008cdf/lindera_python-3.0.4-pp311-pypy311_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:135db704b216723726e0ed882dbea1330e7a564b4d8f8d166549228cbaa63a2f", size = 2242509, upload-time = "2026-04-08T03:31:11.452Z" },
 ]
 
 [[package]]

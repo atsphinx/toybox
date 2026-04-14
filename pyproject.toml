@@ -44,7 +44,8 @@ sass = [
     "httpx>=0.28.0",
 ]
 lindera-search = [
-    "lindera-py>=0.38.4",
+    "lindera-python>=3.0.4",
+    "requests",
 ]
 
 [dependency-groups]
@@ -126,6 +127,7 @@ html_css_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
     "css/demo.css",
 ]
+html_search_options = {type = "atsphinx.toybox.lindera_search.LinderaSplitter"}
 
 # -- Options for extensions
 intersphinx_mapping = { sphinx = ["https://www.sphinx-doc.org/en/master", {}] }
